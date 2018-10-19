@@ -31,9 +31,4 @@ public class CervejasController {
 		System.out.println(">>>Descrição: " + cerveja.getDescricao());
 		return "redirect:/cervejas/novo";
 	}
-
-	@RequestMapping("/cervejas/cadastro")
-	public String cadastro() {
-		return "/cerveja/cadastro-produto";
-	}
 }
