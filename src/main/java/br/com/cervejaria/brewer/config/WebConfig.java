@@ -17,7 +17,8 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
-import br.com.cervejaria.brewer.controller.CervejasController;
+import br.com.cervejaria.brewer.controller.CervejaController;
+import nz.net.ultraq.thymeleaf.LayoutDialect;
 
 /**
  * Classe que Informa a aplicação onde encontrar as controladoras
@@ -26,7 +27,7 @@ import br.com.cervejaria.brewer.controller.CervejasController;
  * @version 1.0
  */
 @Configuration
-@ComponentScan(basePackageClasses = { CervejasController.class })
+@ComponentScan(basePackageClasses = { CervejaController.class })
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
@@ -51,7 +52,8 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 	public TemplateEngine templateEngine() {
 		SpringTemplateEngine engine = new SpringTemplateEngine();
 		engine.setEnableSpringELCompiler(true);
-		engine.setTemplateResolver(templateResolver());
+		engine.setTemplateResolver(templateResolver()); // Layout dialect do Thymeleaf
+		engine.addDialect(new LayoutDialect());
 		return engine;
 	}
 
