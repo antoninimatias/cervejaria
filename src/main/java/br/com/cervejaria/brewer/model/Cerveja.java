@@ -133,6 +133,14 @@ public class Cerveja {
 		this.descricao = descricao;
 	}
 
+	public Estilo getEstilo() {
+		return estilo;
+	}
+
+	public void setEstilo(Estilo estilo) {
+		this.estilo = estilo;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

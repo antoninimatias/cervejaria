@@ -15,12 +15,16 @@ import br.com.cervejaria.brewer.model.Cerveja;
 import br.com.cervejaria.brewer.model.Origem;
 import br.com.cervejaria.brewer.model.Sabor;
 import br.com.cervejaria.brewer.repository.Estilos;
+import br.com.cervejaria.brewer.service.CadastroCervejaService;
 
 @Controller
 public class CervejaController {
 
 	@Autowired
 	private Estilos estilos;
+
+	@Autowired
+	private CadastroCervejaService cadastroCervejaService;
 
 	@RequestMapping(value = "/cervejas/novo")
 	public ModelAndView novo(Cerveja cerveja) {
@@ -32,16 +36,14 @@ public class CervejaController {
 	}
 
 	@RequestMapping(value = "/cervejas/novo", method = RequestMethod.POST)
-	public ModelAndView cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes attributes) {
-		/*if (result.hasErrors()) {
+	public ModelAndView cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model,
+			RedirectAttributes attributes) {
+		if (result.hasErrors()) {
 			return novo(cerveja);
-		}*/
+		}
+
+		cadastroCervejaService.save(cerveja);
 		attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!");
-		System.out.println(">>>Sku: " + cerveja.getSku());
-		System.out.println(">>>Sku: " + cerveja.getSabor());
-		System.out.println(">>>Sku: " + cerveja.getNome());
-		System.out.println(">>>Sku: " + cerveja.getOrigem());
-		System.out.println(">>>Sku: " + cerveja.getDescricao());
 		return new ModelAndView("redirect:/cervejas/novo");
 	}
 }
