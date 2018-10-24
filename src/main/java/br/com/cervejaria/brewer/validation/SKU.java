@@ -10,6 +10,12 @@ import javax.validation.OverridesAttribute;
 import javax.validation.Payload;
 import javax.validation.constraints.Pattern;
 
+/**
+ * @author Antonini Matias
+ * @since 10/2018
+ * Annotation customizada para validação do input Sku de cerveja
+ */
+
 @Target({ ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = {})
