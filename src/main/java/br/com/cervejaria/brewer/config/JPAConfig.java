@@ -16,10 +16,10 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import br.com.cervejaria.brewer.model.Cerveja;
-import br.com.cervejaria.brewer.repository.CervejaRepository;
+import br.com.cervejaria.brewer.repository.CervejasRepository;
 
 @Configuration
-@EnableJpaRepositories(basePackageClasses = CervejaRepository.class, enableDefaultTransactions = false)
+@EnableJpaRepositories(basePackageClasses = CervejasRepository.class, enableDefaultTransactions = false)
 @EnableTransactionManagement
 public class JPAConfig {
 

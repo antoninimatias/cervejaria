@@ -4,17 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.cervejaria.brewer.model.Estilo;
-import br.com.cervejaria.brewer.repository.EstiloRepository;
+import br.com.cervejaria.brewer.model.Cerveja;
+import br.com.cervejaria.brewer.repository.CervejasRepository;
 
 @Service
-public class EstiloService {
-
+public class CervejasService {
+	
 	@Autowired
-	private EstiloRepository estiloRepository;
-
+	private CervejasRepository cervejas;
+	
 	@Transactional
-	public void save(Estilo estilo) {
-		estiloRepository.save(estilo);
+	public void save(Cerveja cerveja) {
+		cervejas.save(cerveja);
 	}
 }

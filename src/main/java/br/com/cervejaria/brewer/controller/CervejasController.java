@@ -14,17 +14,17 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.cervejaria.brewer.model.Cerveja;
 import br.com.cervejaria.brewer.model.Origem;
 import br.com.cervejaria.brewer.model.Sabor;
-import br.com.cervejaria.brewer.repository.EstiloRepository;
-import br.com.cervejaria.brewer.service.CervejaService;
+import br.com.cervejaria.brewer.repository.EstilosRepository;
+import br.com.cervejaria.brewer.service.CervejasService;
 
 @Controller
-public class CervejaController {
+public class CervejasController {
 
 	@Autowired
-	private EstiloRepository estiloRepository;
+	private EstilosRepository estiloRepository;
 
 	@Autowired
-	private CervejaService cadastroCervejaService;
+	private CervejasService cadastroCervejaService;
 
 	@RequestMapping(value = "/cervejas/novo")
 	public ModelAndView novo(Cerveja cerveja) {

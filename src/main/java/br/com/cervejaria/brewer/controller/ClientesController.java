@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.cervejaria.brewer.model.Cerveja;
 
 @Controller
-public class UsuarioController {
+public class ClientesController {
 
-	@RequestMapping(value = "/usuario/novo")
+	@RequestMapping(value = "/cliente/novo")
 	public String novo(Cerveja cerveja) {
-		return "usuario/CadastroUsuario";
+		return "cliente/CadastroCliente";
 	}
 }

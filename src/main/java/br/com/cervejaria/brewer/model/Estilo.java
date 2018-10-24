@@ -24,7 +24,7 @@ public class Estilo implements Serializable {
 	private Long codigo;
 
 	@NotBlank(message = "O nome é obrigatório")
-	@Size(max = 20, message = "O tamanho do nome deve estar entre 1 e 20")
+	@Size(max = 20, message = "O tamanho não pode ser maior que {max} caracteres")
 	private String nome;
 
 	@OneToMany(mappedBy = "estilo")

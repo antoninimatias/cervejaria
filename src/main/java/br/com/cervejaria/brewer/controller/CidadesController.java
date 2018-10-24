@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.cervejaria.brewer.model.Cerveja;
 
 @Controller
-public class CidadeController {
+public class CidadesController {
 	
 	@RequestMapping(value = "/cidade/novo")
 	public String novo(Cerveja cerveja) {
