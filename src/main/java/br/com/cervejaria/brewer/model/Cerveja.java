@@ -1,5 +1,4 @@
 package br.com.cervejaria.brewer.model;
-
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
@@ -16,6 +15,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import br.com.cervejaria.brewer.validation.SKU;
+
 @Entity
 @Table(name = "cerveja")
 public class Cerveja {
@@ -23,7 +24,8 @@ public class Cerveja {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-
+	
+	@SKU
 	@NotBlank(message = "Sku é Obrigatório")
 	private String sku;
 
