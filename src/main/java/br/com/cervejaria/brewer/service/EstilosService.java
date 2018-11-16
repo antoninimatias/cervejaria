@@ -17,11 +17,11 @@ public class EstilosService {
 	private EstilosRepository estiloRepository;
 
 	@Transactional
-	public void save(Estilo estilo) {
+	public Estilo save(Estilo estilo) {
 		Optional<Estilo> estiloOptional = estiloRepository.findByNomeIgnoreCase(estilo.getNome());
 		if (estiloOptional.isPresent()) {
 			throw new NomeEstiloJaCadastradoException("Estilo já Cadastrado");
 		}
-		estiloRepository.save(estilo);
+		return estiloRepository.saveAndFlush(estilo);
 	}
 }
